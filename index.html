@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARDI PRANATA | Pricelist Foto Wisuda</title>
+<meta name="description" content="Pricelist foto & video wisuda ARDI PRANATA. Booking mudah langsung lewat WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1e1812;
+    --card:#271f16;
+    --card-2:#352b1d;
+    --gold:#b38b4d;
+    --gold-soft:#d4b077;
+    --cream:#f1e5cb;
+    --text:#efe3ca;
+    --muted:#b9ab90;
+    --line:#4a3a25;
+    --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans:'Jost', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* Header */
+  header{padding:56px 0 20px;text-align:center;border-bottom:1px solid var(--line)}
+  header h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.4rem,7vw,4.6rem);
+    letter-spacing:.12em;
+    color:var(--cream);
+    line-height:1.05;
+  }
+  header p{color:var(--muted);margin:10px 0 28px;font-weight:300}
+
+  section{padding:56px 0 8px}
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    color:var(--cream);
+    line-height:1.1;
+  }
+  .lead{color:var(--muted);margin:10px 0 28px;font-weight:300;max-width:62ch}
+
+  /* Package cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+  .pkg{
+    display:flex;flex-direction:column;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:26px;
+    overflow:hidden;
+  }
+  .pkg-head{
+    background:var(--gold);
+    color:var(--cream);
+    text-align:center;
+    padding:18px 12px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:1.05rem;
+  }
+  .pkg ul{list-style:none;padding:28px 30px;flex:1}
+  .pkg li{display:flex;gap:16px;padding:7px 0;font-size:1.12rem}
+  .pkg li::before{content:"✓";color:var(--gold);font-weight:300;flex:none}
+  .price{
+    background:var(--card-2);
+    text-align:center;
+    padding:26px 12px;
+    font-weight:600;
+    font-size:2rem;
+    letter-spacing:.06em;
+    color:var(--cream);
+  }
+  .price small{display:block;font-size:.8rem;font-weight:300;letter-spacing:.04em;color:var(--muted);margin-top:2px}
+  .btn{
+    display:block;width:100%;
+    background:var(--cream);
+    color:#1a140d;
+    border:0;
+    padding:20px;
+    font:600 1.15rem var(--sans);
+    cursor:pointer;
+    text-align:center;
+    transition:background .2s;
+  }
+  .btn:hover{background:#fff6e2}
+  :focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+
+  /* Video add-on */
+  .addon{
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+    background:var(--card);
+    border:1px solid var(--gold);
+    border-radius:26px;
+    padding:30px 34px;
+  }
+  .addon h3{font-family:var(--serif);font-size:2rem;color:var(--cream);font-weight:600;line-height:1.15}
+  .addon ul{list-style:none;margin-top:10px}
+  .addon li{display:flex;gap:14px;padding:3px 0}
+  .addon li::before{content:"✓";color:var(--gold)}
+  .addon .plus{text-align:right}
+  .addon .plus b{display:block;font-size:2.2rem;color:var(--cream);letter-spacing:.05em;font-weight:600}
+  .addon .plus span{color:var(--muted);font-weight:300;font-size:.95rem}
+
+  /* Booking */
+  .booking{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start;
+  }
+  form{
+    background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px;
+    display:grid;gap:18px;
+  }
+  label{display:grid;gap:6px;font-weight:500;color:var(--cream);font-size:1rem}
+  input,select,textarea{
+    width:100%;
+    background:var(--bg);
+    color:var(--text);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:13px 14px;
+    font:400 1rem var(--sans);
+    color-scheme:dark;
+  }
+  input:focus,select:focus{border-color:var(--gold)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .check{display:flex;gap:12px;align-items:flex-start;font-weight:400;cursor:pointer}
+  .check input{width:22px;height:22px;margin-top:2px;accent-color:var(--gold);flex:none}
+  .summary{
+    background:var(--card-2);border-radius:14px;padding:16px 18px;
+    display:grid;gap:4px;font-size:1rem;
+  }
+  .summary div{display:flex;justify-content:space-between;gap:12px}
+  .summary .dp{color:var(--gold-soft);font-weight:600;border-top:1px solid var(--line);padding-top:6px;margin-top:4px}
+  .err{color:#ee9a86;font-size:.95rem;min-height:1.2em}
+
+  .side{display:grid;gap:22px}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px 28px}
+  .box h3{font-family:var(--serif);font-size:1.7rem;color:var(--cream);font-weight:600;margin-bottom:10px}
+  pre{
+    white-space:pre-wrap;word-break:break-word;
+    font:400 .95rem/1.55 var(--sans);
+    color:var(--text);
+  }
+  .pay p{padding:4px 0}
+  .pay strong{color:var(--cream)}
+  .warn{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:var(--gold-soft)}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-wa,.btn-copy{
+    border:0;border-radius:14px;padding:15px 22px;font:600 1.05rem var(--sans);cursor:pointer;
+  }
+  .btn-wa{background:var(--gold);color:#fff8e8;flex:1;min-width:220px}
+  .btn-wa:hover{background:#c29a5b}
+  .btn-copy{background:transparent;color:var(--cream);border:1px solid var(--line)}
+  .btn-copy:hover{border-color:var(--gold)}
+
+  footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-weight:300;font-size:.95rem}
+
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr}
+    .booking{grid-template-columns:1fr}
+    .addon{grid-template-columns:1fr}
+    .addon .plus{text-align:left}
+  }
+  @media (max-width:480px){
+    body{font-size:17px}
+    .row{grid-template-columns:1fr}
+    form{padding:22px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>ARDI PRANATA</h1>
+    <p>Fotografer wisuda &mdash; hasil profesional, harga jelas.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- PRICELIST FOTO -->
+  <section id="pricelist">
+    <h2>Wisuda</h2>
+    <p class="lead">Abadikan momen penuh perjuangan dan kebanggaan dengan hasil yang profesional dan berkesan.</p>
+
+    <div class="grid" id="packages"></div>
+  </section>
+
+  <!-- ADDITIONAL VIDEO -->
+  <section id="video">
+    <h2>Additional Video</h2>
+    <p class="lead">Tambahkan video ke paket apa pun yang kamu pilih.</p>
+
+    <div class="addon">
+      <div>
+        <h3>Video Wisuda</h3>
+        <ul>
+          <li>Berlaku untuk Paket 1, 2, dan 3</li>
+          <li>Tambahan durasi sesi 30 menit di setiap paket (60 menit menjadi 90 menit)</li>
+          <li>Dicentang saat mengisi form booking</li>
+        </ul>
+      </div>
+      <div class="plus">
+        <b>+ IDR 500.000</b>
+        <span>per paket &middot; +30 menit</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <h2>Booking</h2>
+    <p class="lead">Isi data di bawah, lalu kirim lewat WhatsApp. Pesan booking tersusun otomatis.</p>
+
+    <div class="booking">
+      <form id="bookingForm" novalidate>
+        <label>Nama
+          <input type="text" id="nama" placeholder="Nama lengkap" autocomplete="name" required>
+        </label>
+
+        <div class="row">
+          <label>Tanggal
+            <input type="date" id="tgl" required>
+          </label>
+          <label>Jam
+            <input type="time" id="jam" required>
+          </label>
+        </div>
+
+        <label>Lokasi
+          <input type="text" id="lokasi" placeholder="Contoh: Gedung Graha, Kampus UI Depok" required>
+        </label>
+
+        <label>Paket
+          <select id="paket" required></select>
+        </label>
+
+        <label class="check" for="video-opt">
+          <input type="checkbox" id="video-opt">
+          <span>Tambah video (+ IDR 500.000, +30 menit)</span>
+        </label>
+
+        <div class="summary" aria-live="polite">
+          <div><span>Harga paket</span><span id="sPaket">IDR 0</span></div>
+          <div id="sVideoRow" hidden><span>Additional video</span><span>IDR 500.000</span></div>
+          <div><span>Total</span><span id="sTotal">IDR 0</span></div>
+          <div class="dp"><span>Minimal DP 50%</span><span id="sDp">IDR 0</span></div>
+        </div>
+
+        <p class="err" id="err" role="alert"></p>
+
+        <div class="btn-row">
+          <button type="submit" class="btn-wa">Kirim booking via WhatsApp</button>
+          <button type="button" class="btn-copy" id="copyBtn">Salin pesan</button>
+        </div>
+      </form>
+
+      <div class="side">
+        <div class="box">
+          <h3>Pratinjau pesan</h3>
+          <pre id="preview"></pre>
+        </div>
+        <div class="box pay">
+          <h3>Pembayaran DP</h3>
+          <p>Minimal DP 50% bisa melalui transfer ke rekening berikut.</p>
+          <p><strong>BRI:</strong> 4851 0102 4620 538 (Ardi Pranata)</p>
+          <p><strong>Dana / ShopeePay:</strong> 089506801472</p>
+          <p>Kirim bukti transfer melalui WA 089506801472 a.n Ardi Pranata.</p>
+          <p class="warn">Cancel = DP hangus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="yr"></span> ARDI PRANATA. Semua hak dilindungi.</div>
+</footer>
+
+<script>
+  // ====== PENGATURAN (ubah di sini bila ada perubahan) ======
+  const WA_NUMBER = "6289506801472";      // format internasional, tanpa + atau 0
+  const VIDEO_PRICE = 500000;
+  const PACKAGES = [
+    { id:"p1", name:"Paket 1 Personal", head:"Paket 1 Personal", price:400000,
+      items:["Foto (Semua File)","1 Wisudawan","100 Foto Edit","1 Fotografer","Durasi 60 Menit"] },
+    { id:"p2", name:"Paket 2 Family", head:"Paket 2 Family", price:550000,
+      items:["Foto (Semua File)","1 Wisudawan + Keluarga Inti","100 Foto Edit","1 Fotografer","Durasi 60 Menit"] },
+    { id:"p3", name:"Paket 3 Group", head:"Paket 3 Group", price:600000,
+      items:["Foto (Semua File)","3 Wisudawan max","150 Foto Edit","1 Fotografer","Durasi 60 Menit"] }
+  ];
+  // ===========================================================
+
+  const rp = n => "IDR " + n.toLocaleString("id-ID");
+  const $ = id => document.getElementById(id);
+
+  // Render kartu paket
+  $("packages").innerHTML = PACKAGES.map(p => `
+    <article class="pkg">
+      <div class="pkg-head">${p.head}</div>
+      <ul>${p.items.map(i => `<li>${i}</li>`).join("")}</ul>
+      <div class="price">${rp(p.price)}</div>
+      <button type="button" class="btn" data-id="${p.id}">Pesan Paket Ini</button>
+    </article>`).join("");
+
+  // Isi dropdown paket
+  $("paket").innerHTML = PACKAGES.map(p => `<option value="${p.id}">${p.name} - ${rp(p.price)}</option>`).join("");
+
+  // Tanggal minimal = hari ini
+  const today = new Date();
+  $("tgl").min = new Date(today.getTime() - today.getTimezoneOffset()*60000).toISOString().split("T")[0];
+  $("yr").textContent = today.getFullYear();
+
+  function formatTanggal(v){
+    if(!v) return "";
+    const [y,m,d] = v.split("-").map(Number);
+    return new Date(y, m-1, d).toLocaleDateString("id-ID", {weekday:"long", day:"numeric", month:"long", year:"numeric"});
+  }
+
+  function buildMessage(){
+    const pkg = PACKAGES.find(p => p.id === $("paket").value);
+    const withVideo = $("video-opt").checked;
+    const paketText = pkg.name + (withVideo ? " + Video (+30 menit)" : "");
+    const tgl = formatTanggal($("tgl").value);
+    const jam = $("jam").value ? $("jam").value.replace(":", ".") + " WIB" : "";
+    const tglJam = [tgl, jam].filter(Boolean).join(", ");
+
+    return `Format booking
+Nama : ${$("nama").value.trim()}
+Tgl & Jam : ${tglJam}
+Lokasi : ${$("lokasi").value.trim()}
+Paket : ${paketText}
+
+Minimal DP 50% bisa melalui tf ke rek berikut.
+BRI: 4851 0102 4620 538 (Ardi Pranata)
+Dana/Shpeepay : 089506801472
+kirim bukti tf melalui wa 089506801472 a.n Ardi Pranata(cancel=DP hangus)`;
+  }
+
+  function refresh(){
+    const pkg = PACKAGES.find(p => p.id === $("paket").value);
+    const withVideo = $("video-opt").checked;
+    const total = pkg.price + (withVideo ? VIDEO_PRICE : 0);
+    $("sPaket").textContent = rp(pkg.price);
+    $("sVideoRow").hidden = !withVideo;
+    $("sTotal").textContent = rp(total);
+    $("sDp").textContent = rp(Math.ceil(total / 2));
+    $("preview").textContent = buildMessage();
+  }
+
+  function validate(){
+    const missing = [];
+    if(!$("nama").value.trim()) missing.push("Nama");
+    if(!$("tgl").value) missing.push("Tanggal");
+    if(!$("jam").value) missing.push("Jam");
+    if(!$("lokasi").value.trim()) missing.push("Lokasi");
+    $("err").textContent = missing.length ? "Lengkapi dulu: " + missing.join(", ") + "." : "";
+    return missing.length === 0;
+  }
+
+  // Klik "Pesan Paket Ini" -> pilih paket & scroll ke form
+  $("packages").addEventListener("click", e => {
+    const b = e.target.closest("button[data-id]");
+    if(!b) return;
+    $("paket").value = b.dataset.id;
+    refresh();
+    $("booking").scrollIntoView({behavior:"smooth"});
+    setTimeout(() => $("nama").focus({preventScroll:true}), 500);
+  });
+
+  ["nama","tgl","jam","lokasi","paket","video-opt"].forEach(id => {
+    $(id).addEventListener("input", refresh);
+    $(id).addEventListener("change", refresh);
+  });
+
+  $("bookingForm").addEventListener("submit", e => {
+    e.preventDefault();
+    if(!validate()) return;
+    const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(buildMessage());
+    window.open(url, "_blank", "noopener");
+  });
+
+  $("copyBtn").addEventListener("click", async () => {
+    if(!validate()) return;
+    const btn = $("copyBtn");
+    try{
+      await navigator.clipboard.writeText(buildMessage());
+      btn.textContent = "Tersalin";
+    }catch(_){
+      btn.textContent = "Gagal menyalin";
+    }
+    setTimeout(() => btn.textContent = "Salin pesan", 1800);
+  });
+
+  refresh();
+</script>
+</body>
+</html>
